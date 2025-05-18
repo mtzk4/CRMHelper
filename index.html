@@ -27,7 +27,7 @@
                 <div class="check-item">
                     <form>
                         <label class="checkbox">
-                            <input class="checkbox-input" type="checkbox" id="/" name="allSlug" value="/" name="all"
+                            <input class="checkbox-input" type="checkbox" id="/" value="/" name="all"
                                 checked>
 
                             <div class="checkbox-new" aria-hidden="true">
@@ -44,7 +44,7 @@
                 <div class="check-item">
                     <form>
                         <label class="checkbox">
-                            <input class="checkbox-input" type="checkbox" id="/*" name="allSlug" value="/*" name="all"
+                            <input class="checkbox-input" type="checkbox" id="/*" value="/*" name="all"
                                 checked>
 
                             <div class="checkbox-new" aria-hidden="true">
@@ -225,6 +225,7 @@
                     </form>
                 </div>
             </div>
+            <input class="customSlug" type="text" id="customSlug" placeholder="Введите слаг">
         </div>
         <div class="smartSlugs">
             <div class="platformHead">
@@ -349,6 +350,7 @@
                     </form>
                 </div>
             </div>
+            <input class="customSlug" type="text" id="customSmartSlug" placeholder="Введите слаг">
         </div>
     </div>
     <div class="hash">
@@ -356,22 +358,29 @@
             <div class="platformHead">
                 <p class="platform">Tariff</p>
                 <input class="inputTariff" type="text" placeholder="Введите тариф" id="inputTariff">
+                <input class="inputTariff" type="text" placeholder="Введите слаг редиректа" id="inputTariffRedirect">
+                <button class="enter" id="enterTariff"><img src="images/eye.svg"></button>
             </div>
             <div class="outputBlocks">
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="web"></div>
+                    <div class="outputLink" name="tariff" id="web"></div>
                     <div class="platformLabel">Web</div>
                     <button class="copy" name="1" id="copyWebTariff"><img src="images/copy.svg"></button>
                 </div>
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="smartTV"></div>
-                    <div class="platformLabel">SmartTV</div>
-                    <button class="copy" name="2" id="copySmartTariff"><img src="images/copy.svg"></button>
+                    <div class="outputLink" name="tariff" id="android"></div>
+                    <div class="platformLabel">Android TV/App</div>
+                    <button class="copy" name="2" id="copyAndroidTariff"><img src="images/copy.svg"></button>
                 </div>
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="webSmart"></div>
+                    <div class="outputLink" name="tariff" id="smartTV"></div>
+                    <div class="platformLabel">SmartTV</div>
+                    <button class="copy" name="3" id="copySmartTariff"><img src="images/copy.svg"></button>
+                </div>
+                <div class="hashForms">
+                    <div class="outputLink" name="tariff" id="webSmart"></div>
                     <div class="platformLabel">WebSmart</div>
-                    <button class="copy" name="3" id="copyWebSmartTariff"><img src="images/copy.svg"></button>
+                    <button class="copy" name="4" id="copyWebSmartTariff"><img src="images/copy.svg"></button>
                 </div>
             </div>    
         </div>
@@ -379,25 +388,37 @@
             <div class="platformHead">
                 <p class="platform">Promocode</p>
                 <input class="inputPromocode" type="text" placeholder="Введите промокод" id="inputPromocode">
+                <input class="inputPromocode" type="text" placeholder="Введите слаг редиректа" id="inputPromoRedirect">
+                <button class="enter" id="enterPromo"><img src="images/eye.svg"></button>
             </div>
             <div class="outputBlocks">
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="webPromo"></div>
+                    <div class="outputLink" name="promo" id="webPromo"></div>
                     <div class="platformLabel">Web</div>
                     <button class="copy" name="1" id="copyWebPromo"><img src="images/copy.svg"></button>
                 </div>
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="webPromoActivate"></div>
+                    <div class="outputLink" name="promo" id="webPromoActivate"></div>
                     <div class="platformLabel">Web activated</div>
                     <button class="copy" name="2" id="copyWebPromoActivate"><img src="images/copy.svg"></button>
                 </div>
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="smartTVPromo"></div>
+                    <div class="outputLink" name="promo" id="androidPromo"></div>
+                    <div class="platformLabel">Android TV/App</div>
+                    <button class="copy" name="1" id="copyAndroidPromo"><img src="images/copy.svg"></button>
+                </div>
+                <div class="hashForms">
+                    <div class="outputLink" name="promo" id="androidPromoActivate"></div>
+                    <div class="platformLabel">Android TV/App activated</div>
+                    <button class="copy" name="2" id="copyAndroidPromoActivate"><img src="images/copy.svg"></button>
+                </div>
+                <div class="hashForms">
+                    <div class="outputLink" name="promo" id="smartTVPromo"></div>
                     <div class="platformLabel">Smart/WebSmart</div>
                     <button class="copy" name="3" id="copySmartPromo"><img src="images/copy.svg"></button>
                 </div>
                 <div class="hashForms">
-                    <div class="outputLink" name="web" id="smartTVPromoActivate"></div>
+                    <div class="outputLink" name="promo" id="smartTVPromoActivate"></div>
                     <div class="platformLabel">Smart/WebSmart activated</div>
                     <button class="copy" name="3" id="copySmartPromoActivate"><img src="images/copy.svg"></button>
                 </div>
