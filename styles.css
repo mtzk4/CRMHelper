@@ -1,26 +1,28 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: montserrat, sans-serif;
 }
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 100vh;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
     align-items: center;
-    gap: 3px;
+    gap: 7px;
 }
 /* Шапка */
 .header {
-    width: 99vw;
+    width: 98vw;
     height: 5vh;
     border: 0px solid transparent;
     border-radius: 10px;
     background-color: rgb(93, 135, 242);
     margin-top: 1vh;
+    margin-left: 7px;
     padding-left: 10px;
     color: white;   
 }
@@ -31,19 +33,17 @@ body {
 }
 /* Окно слагов */
 .slug {
-    height: 40vh;
-    width: 99vw;
-    border: 0px solid transparent;
+    height: 40%;
+    width: 98vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    /* justify-content: space-evenly; */
     align-items: center;
+    margin-left: 7px;
     gap: 10px;
 }
-.allSlugs {
-    /* margin-left: 1%; */
-    height: 95%;
+.allSlugs, .smartSlugs {
+    height: 270px;
     width: 50%;
     background-color: rgb(93, 135, 242);
     border-radius: 10px;
@@ -52,6 +52,12 @@ body {
     flex-wrap: nowrap;
     gap: 10px;
 }
+/* .smartSlugs {
+    margin-right: 1px;
+}
+.allSlugs {
+    margin-left: 3px;
+} */
 .platformHead {
     display: flex;
     flex-direction: row;
@@ -63,14 +69,14 @@ body {
     padding-left: 7px;
     gap: 10px;
     margin-top: 3px;
-    margin-right: 3px;
+    /* margin-right: 3px; */
 }
 .platform {
     flex-grow: 1;
     line-height: 100%;
     vertical-align: middle;
 }
-.copy {
+.copy, .enter {
     flex-grow: 1;
     max-width: 50px;
     max-height: 50px;
@@ -78,19 +84,8 @@ body {
     min-height: 50px;
     border: 0px solid transparent;
     border-radius: 5px;
-    font-size: 15px;
-    color: rgb(73, 118, 233);
-}
-.smartSlugs {
-    /* margin-right: 1%; */
-    height: 95%;
-    width: 50%;
-    background-color: rgb(93, 135, 242);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 10px;
+    background-color: #FFFFFF;
+    cursor: pointer;
 }
 .checkboxes {
     width: 99%;
@@ -99,14 +94,15 @@ body {
     color: white;
     margin-left: 7px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 3px;
     /* justify-content: space-between; */
+    align-items: flex-start;
     margin-bottom: 15px;
 }
 /* .check-item {
-    width: 50px;
+    cursor: pointer;
 } */
 .checkbox {
   position: relative;
@@ -118,7 +114,7 @@ body {
 .checkbox-input {
   appearance: none;
   position: relative;
-  width: 200px;
+  width: 130px;
   height: 40px;
   border-radius: 10px;
   border: 3px solid #FFFFFF;
@@ -128,13 +124,13 @@ body {
   top: 0px;
   left: 0px;
   display: flex;
-  width: 90px;
+  width: 130px;
   height: 40px;
-  padding: 3px;
+  /* padding: 3px; */
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   border: 1px solid transparent;
   border-radius: 20px;
   user-select: none;
@@ -158,21 +154,34 @@ body {
 .checkbox-input:disabled {
   background: rgb(93, 135, 242);
 }
-
+.customSlug {
+    width: 99%;
+    height: 50px;
+    align-self: center;
+    margin-bottom: 5px;
+    /* max-width: 300px; */
+    border: 1px solid blue;
+    border-radius: 5px;
+    font-size: 15px;
+    color: rgb(73, 118, 233);
+    margin-top: auto;
+} 
 
 /* Окно хешей */
 .hash {
-    height: 50vh;
-    width: 99vw;
+    height: 100%;
+    width: 98vw;
     border: 0px solid transparent;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     gap: 10px;
+    margin-bottom: 3px;
+    margin-left: 7px;
 }
 .tariff, .promocode {
-    height: 95%;
+    height: 470px;
     width: 50%;
     background-color: rgb(93, 135, 242);
     border-radius: 10px;
@@ -227,7 +236,7 @@ body {
 .hashForms {
     display: flex;
     flex-direction: row;
-    width: 99%;
+    width: 100%;
     height: 60px;
     flex-wrap: nowrap;
     justify-content: space-between;
