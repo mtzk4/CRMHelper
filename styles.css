@@ -408,12 +408,12 @@ body {
 .checkbox-newAll {
     width: 56px;
     height: 48px;
-    background-image: url(images/smartSlugsOff/AllOff.svg);
+    background-image: url(images/smartSlugsOff/allOff.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
     .checkbox-inputAll:checked + .checkbox-newAll {
-        background-image: url(images/smartSlugs/All.svg);
+        background-image: url(images/smartSlugs/all.svg);
         background-repeat: no-repeat;
         background-size: cover;
     }
