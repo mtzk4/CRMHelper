@@ -2,21 +2,65 @@ document.addEventListener('DOMContentLoaded', function () {
     const copyButton = document.getElementById('copyAllSlug');
     const notification = document.getElementById('notification');
     var customSlug = document.getElementById('customSlug');
+    const deleteCustom = document.getElementById('deleteCustomSLug');
+    const copyCustom = document.getElementById('copyCustomSlug');
+    const onAllSlug = document.getElementById('onAllSlug');
+    const offAllSlug = document.getElementById('offAllSlug');
+
+    // Кнопка копирования ТОЛЬКО кастомного слага
+    copyCustom.onclick = function () {
+    const textToCopy = customSlug.value;
+    navigator.clipboard.writeText(textToCopy).then(function () {
+        if (textToCopy.length !== 0) {
+            notification.textContent = 'Copied to clipboard!';
+            notification.style.backgroundColor = '#4CAF50';
+            showNotification();}
+        else {
+            notification.textContent = 'Nothing to copy!';
+            notification.style.backgroundColor = '#f44336';
+            showNotification();
+        }
+        }).catch(function (err) {
+            console.error('Could not copy text: ', err);
+            notification.textContent = 'Failed to copy!';
+            notification.style.backgroundColor = '#f44336';
+            showNotification();
+        });
+    };
+    
+    // Кнопка удаления кастомного слага
+    deleteCustom.addEventListener('click', function() {
+            customSlug.value = '';
+    });
+
+    // Включаем и выключаем все чекбоксы по кнопке
+    onAllSlug.addEventListener('click', function () {
+        const checkboxes = document.querySelectorAll('input[name="all"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+    });
+    offAllSlug.addEventListener('click', function () {
+        const checkboxes = document.querySelectorAll('input[name="all"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+    });
 
     copyButton.addEventListener('click', function () {
         // Получаем все выбранные чекбоксы
-        const checkboxes = document.querySelectorAll('input[name="all"]:checked');
+        const checkboxesOn = document.querySelectorAll('input[name="all"]:checked');
 
         // Собираем их значения в массив
         
-        const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.value);
+        const selectedValues = Array.from(checkboxesOn).map(checkbox => checkbox.value);
 
          // Добавляем customSlug.value, только если он не пустой
         if (customSlug.value && customSlug.value.trim() !== '') {
             selectedValues.push(customSlug.value);
         }
         
-        // Проверяем, есть ли выбранные элементы (чекбоксы или кастомный slug)
+        // Проверяем, есть ли выбранные элементы (чекбоксы или кастомный слаг)
         if (selectedValues.length === 0) {
             notification.textContent = 'Nothing selected!';
             notification.style.backgroundColor = '#f44336';
@@ -39,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
             showNotification();
         });
     });
-
     function showNotification() {
         notification.style.display = 'block';
         // Скрываем уведомление через 3 секунды
@@ -48,12 +91,58 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
-    const copyButton = document.getElementById('copySmartSlug');
+    const copySmartButton = document.getElementById('copySmartSlug');
     const notification = document.getElementById('notification');
     var customSmartSlug = document.getElementById('customSmartSlug');
+    const deleteCustomSmart = document.getElementById('deleteCustomSmartSlug');
+    const copyCustomSmart = document.getElementById('copyCustomSmartSlug');
+    const onSmartSlug = document.getElementById('onSmartSlug');
+    const offSmartSlug = document.getElementById('offSmartSlug');
 
-    copyButton.addEventListener('click', function () {
+    // Кнопка копирования ТОЛЬКО кастомного слага
+    copyCustomSmart.onclick = function () {
+    const textToCopy = customSmartSlug.value;
+    navigator.clipboard.writeText(textToCopy).then(function () {
+        if (textToCopy.length !== 0) {
+            notification.textContent = 'Copied to clipboard!';
+            notification.style.backgroundColor = '#4CAF50';
+            showNotification();}
+        else {
+            notification.textContent = 'Nothing to copy!';
+            notification.style.backgroundColor = '#f44336';
+            showNotification();
+        }
+        }).catch(function (err) {
+            console.error('Could not copy text: ', err);
+            notification.textContent = 'Failed to copy!';
+            notification.style.backgroundColor = '#f44336';
+            showNotification();
+        });
+    };
+    
+    // Кнопка удаления кастомного слага
+    deleteCustomSmart.addEventListener('click', function() {
+            customSmartSlug.value = '';
+    });
+
+    // Включаем и выключаем все чекбоксы по кнопке
+    onSmartSlug.addEventListener('click', function () {
+        const checkboxes = document.querySelectorAll('input[name="smart"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+    });
+    offSmartSlug.addEventListener('click', function () {
+        const checkboxes = document.querySelectorAll('input[name="smart"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+    });
+
+
+    copySmartButton.addEventListener('click', function () {
         // Получаем все выбранные чекбоксы
         const checkboxes = document.querySelectorAll('input[name="smart"]:checked');
 
@@ -116,24 +205,39 @@ window.onload = function () {
     const copyWebSmartTariff = document.getElementById('copyWebSmartTariff');
 
     const webPromo = document.getElementById('webPromo');
-    const webPromoActivate = document.getElementById('webPromoActivate');
     const androidPromo = document.getElementById('androidPromo');
-    const androidPromoActivate = document.getElementById('androidPromoActivate');
     const smartPromo = document.getElementById('smartTVPromo');
-    const smartPromoActivate = document.getElementById('smartTVPromoActivate');
 
     const copyWebPromo = document.getElementById('copyWebPromo');
-    const copyWebPromoActivate = document.getElementById('copyWebPromoActivate');
     const copyAndroidPromo = document.getElementById('copyAndroidPromo');
-    const copyAndroidPromoActivate = document.getElementById('copyAndroidPromoActivate');
     const copySmartPromo = document.getElementById('copySmartPromo');
-    const copySmartPromoActivate = document.getElementById('copySmartPromoActivate');
 
     const enterTariff = document.getElementById('enterTariff');
     const enterPromo = document.getElementById('enterPromo');
 
+    const deleteTariff = document.getElementById('deleteTariff');
+    const deleteTariffRedirect = document.getElementById('deleteTariffRedirect')
+    const deletePromo = document.getElementById('deletePromo');
+    const deletePromoRedirect = document.getElementById('deletePromoRedirect')
+
+    const active = document.getElementById('active');
+
     const notification = document.getElementById('notification');
 
+    //Кнопки удаления тарифа и редиректа
+    deleteTariff.addEventListener('click', function(){
+        inputTariff.value = ''
+    });
+    deleteTariffRedirect.addEventListener('click', function(){
+        inputTariffRedirect.value = ''
+    });
+    deletePromo.addEventListener('click', function(){
+        inputPromocode.value = ''
+    });
+    deletePromoRedirect.addEventListener('click', function(){
+        inputPromoRedirect.value = ''
+    });
+    
 
     // Перенос текста в окна ссылок
     enterTariff.onclick = function () {
@@ -157,21 +261,16 @@ window.onload = function () {
 };
 
     enterPromo.onclick = function () {
+        var activatePromocode = active.checked? 1 : 0
         if (inputPromoRedirect && inputPromoRedirect.value && inputPromoRedirect.value.trim() !== ''){
-            webPromo.innerText = `#promocode-form_${inputPromocode.value}?activate=0&redirect=${inputPromoRedirect.value}`;
-            webPromoActivate.innerText = `#promocode-form_${inputPromocode.value}?activate=1&redirect=${inputPromoRedirect.value}`;
+            webPromo.innerText = `#promocode-form_${inputPromocode.value}?activate=${activatePromocode}&redirect=${inputPromoRedirect.value}`;
             androidPromo.innerText = `one.premier://premier.one/me/code?code=${inputPromocode.value}`;
-            androidPromoActivate.innerText = `one.premier://premier.one/me/code?code=${inputPromocode.value}?activate=1`;
-            smartPromo.innerText = `/promocode-form?promocode=${inputPromocode.value}&activate=0&redirect=${inputPromoRedirect.value}`;
-            smartPromoActivate.innerText = `/promocode-form?promocode=${inputPromocode.value}&activate=1&redirect=${inputPromoRedirect.value}`;
+            smartPromo.innerText = `/promocode-form?promocode=${inputPromocode.value}&activate=${activatePromocode}&redirect=${inputPromoRedirect.value}`;
         }
         else {
-            webPromo.innerText = `#promocode-form_${inputPromocode.value}?activate=0`;
-            webPromoActivate.innerText = `#promocode-form_${inputPromocode.value}?activate=1`;
+            webPromo.innerText = `#promocode-form_${inputPromocode.value}?activate=${activatePromocode}`;
             androidPromo.innerText = `one.premier://premier.one/me/code?code=${inputPromocode.value}`;
-            androidPromoActivate.innerText = `one.premier://premier.one/me/code?code=${inputPromocode.value}?activate=1`;
-            smartPromo.innerText = `/promocode-form?promocode=${inputPromocode.value}&activate=0`;
-            smartPromoActivate.innerText = `/promocode-form?promocode=${inputPromocode.value}&activate=1`;
+            smartPromo.innerText = `/promocode-form?promocode=${inputPromocode.value}&activate=${activatePromocode}`;
         }
 };
     //Копируем текст ссылок в буфер обмена
@@ -272,25 +371,6 @@ window.onload = function () {
             showNotification();
         });
     };
-    copyWebPromoActivate.onclick = function () {
-        const textToCopy = webPromoActivate.innerText;
-        navigator.clipboard.writeText(textToCopy).then(function () {
-            if (textToCopy.length !== 0) {
-                notification.textContent = 'Copied to clipboard!';
-                notification.style.backgroundColor = '#4CAF50';
-                showNotification();}
-            else {
-                notification.textContent = 'Nothing to copy!';
-                notification.style.backgroundColor = '#f44336';
-                showNotification();
-            }
-        }).catch(function (err) {
-            console.error('Could not copy text: ', err);
-            notification.textContent = 'Failed to copy!';
-            notification.style.backgroundColor = '#f44336';
-            showNotification();
-        });
-    };
     copyAndroidPromo.onclick = function () {
         const textToCopy = androidPromo.innerText;
         navigator.clipboard.writeText(textToCopy).then(function () {
@@ -310,46 +390,8 @@ window.onload = function () {
             showNotification();
         });
     };
-    copyAndroidPromoActivate.onclick = function () {
-        const textToCopy = androidPromoActivate.innerText;
-        navigator.clipboard.writeText(textToCopy).then(function () {
-            if (textToCopy.length !== 0) {
-                notification.textContent = 'Copied to clipboard!';
-                notification.style.backgroundColor = '#4CAF50';
-                showNotification();}
-            else {
-                notification.textContent = 'Nothing to copy!';
-                notification.style.backgroundColor = '#f44336';
-                showNotification();
-            }
-        }).catch(function (err) {
-            console.error('Could not copy text: ', err);
-            notification.textContent = 'Failed to copy!';
-            notification.style.backgroundColor = '#f44336';
-            showNotification();
-        });
-    };
     copySmartPromo.onclick = function () {
         const textToCopy = smartPromo.innerText;
-        navigator.clipboard.writeText(textToCopy).then(function () {
-            if (textToCopy.length !== 0) {
-                notification.textContent = 'Copied to clipboard!';
-                notification.style.backgroundColor = '#4CAF50';
-                showNotification();}
-            else {
-                notification.textContent = 'Nothing to copy!';
-                notification.style.backgroundColor = '#f44336';
-                showNotification();
-            }
-        }).catch(function (err) {
-            console.error('Could not copy text: ', err);
-            notification.textContent = 'Failed to copy!';
-            notification.style.backgroundColor = '#f44336';
-            showNotification();
-        });
-    };
-    copySmartPromoActivate.onclick = function () {
-        const textToCopy = smartPromoActivate.innerText;
         navigator.clipboard.writeText(textToCopy).then(function () {
             if (textToCopy.length !== 0) {
                 notification.textContent = 'Copied to clipboard!';
