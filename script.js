@@ -418,3 +418,88 @@ window.onload = function () {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // Проверяем сохраненную тему при загрузке страницы
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        applyDarkTheme();
+    }
+
+    themeToggle.addEventListener('click', function () {
+        if (document.body.classList.contains('dark-theme')) {
+            applyLightTheme();
+            localStorage.setItem('theme', 'light');
+        } else {
+            applyDarkTheme();
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    function applyDarkTheme() {
+        var mainColor = document.getElementById('headerTheme');
+        mainColor.classList.remove('header');
+        mainColor.classList.add('headerDark');
+        
+        var allSlugsColor = document.getElementById('allSlugsTheme');
+        allSlugsColor.classList.remove('allSlugs');
+        allSlugsColor.classList.add('allSlugsDark');
+        
+        var smartSlugsColor = document.getElementById('smartSlugsTheme');
+        smartSlugsColor.classList.remove('smartSlugs');
+        smartSlugsColor.classList.add('smartSlugsDark');
+        
+        var tariffColor = document.getElementById('tariffTheme');
+        tariffColor.classList.remove('tariff');
+        tariffColor.classList.add('tariffDark');
+        
+        var promocodeColor = document.getElementById('promocodeTheme');
+        promocodeColor.classList.remove('promocode');
+        promocodeColor.classList.add('promocodeDark');
+        
+        var tooltipText = document.querySelectorAll('span');
+        tooltipText.forEach(function(tooltipText) {
+            tooltipText.classList.remove('tooltipText');
+            tooltipText.classList.add('tooltipTextDark');
+        });
+        
+        themeToggle.classList.remove('themeToggle');
+        themeToggle.classList.add('themeToggleDark');
+        
+        document.body.classList.add('dark-theme');
+    }
+
+    function applyLightTheme() {
+        var mainColor = document.getElementById('headerTheme');
+        mainColor.classList.remove('headerDark');
+        mainColor.classList.add('header');
+        
+        var allSlugsColor = document.getElementById('allSlugsTheme');
+        allSlugsColor.classList.remove('allSlugsDark');
+        allSlugsColor.classList.add('allSlugs');
+        
+        var smartSlugsColor = document.getElementById('smartSlugsTheme');
+        smartSlugsColor.classList.remove('smartSlugsDark');
+        smartSlugsColor.classList.add('smartSlugs');
+        
+        var tariffColor = document.getElementById('tariffTheme');
+        tariffColor.classList.remove('tariffDark');
+        tariffColor.classList.add('tariff');
+        
+        var promocodeColor = document.getElementById('promocodeTheme');
+        promocodeColor.classList.remove('promocodeDark');
+        promocodeColor.classList.add('promocode');
+
+        var tooltipText = document.querySelectorAll('span');
+        tooltipText.forEach(function(tooltipText) {
+            tooltipText.classList.remove('tooltipTextDark');
+            tooltipText.classList.add('tooltipText');
+        });
+        
+        themeToggle.classList.remove('themeToggleDark');
+        themeToggle.classList.add('themeToggle');
+        
+        document.body.classList.remove('dark-theme');
+    }
+});
