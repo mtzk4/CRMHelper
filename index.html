@@ -6,337 +6,385 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRMHelper</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/hotdog.svg" type="image/x-icon">
 </head>
-<link rel="icon" href="images/hotdog.svg" type="image/x-icon">
+
 <body>
     <script src="script.js"></script>
 
-    <div class=header>
-        <p class="name">CRMHelper</p>
-    </div>
-    <div id="notification" class="notification">
-        Copied to clipboard!
-    </div>
-    <div class="slug">
-        <div class="allSlugs">
-            <div class="platformHead">
-                <p class="platform">All slugs</p>
-            </div>
-            <div class="slugMain">
-                <div class="slugContainer">
-                    <div class="checkboxes">
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputSlash" type="checkbox" id="/" value="/" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newSlash" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputShows" type="checkbox" id="/shows" value="/shows" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newShows" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputShowAsterisk" type="checkbox" id="/show/*" value="/show/*" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newShowAsterisk" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputCollections" type="checkbox" id="/collections" value="/collections" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newCollections" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputCollections-all" type="checkbox" id="/collections-all" value="/collections-all" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newCollections-all" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputSearch" type="checkbox" id="/search" value="/search" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newSearch" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputSeries" type="checkbox" id="/series" value="/series" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newSeries" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputMovies" type="checkbox" id="/movies" value="/movies" name="all"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newMovies" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputSport" type="checkbox" id="/sport" value="/sport" name="all"
-                                        >
-                                    <div class="checkbox-new checkbox-newSport" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputTV" type="checkbox" id="/tv" value="/tv" name="all"
-                                        >
-                                    <div class="checkbox-new checkbox-newTV" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputSlashAsterisk" type="checkbox" id="/*" value="/*" name="allDisable"
-                                    disabled>
-                                    <div class="checkbox-new checkbox-newSlashAsterisk" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                    </div>
-                    <input class="customSlug" type="text" id="customSlug" placeholder="Введите слаг">
-                </div>
-                <div class="slugPanel">
-                    <button class="copy copySlug" id="copyAllSlug"></button>
-                    <div class="toggleBtn">
-                        <button class="on" id="onAllSlug"></button>
-                        <button class="off" id="offAllSlug"></button>
-                    </div>
-                    <div class="inputBtn">
-                        <button class="delete" id="deleteCustomSLug"></button>
-                        <button class="copy copyOne" id="copyCustomSlug"></button>
-                    </div>
-                </div>       
-            </div>        
+<div class="header" id="headerTheme">
+    <p class="name">CRMHelper</p>
+    <button class="themeToggle" id="themeToggle"></button>
+</div>
+<div id="notification" class="notification">
+    Copied to clipboard!
+</div>
+<div class="slug">
+    <div class="allSlugs" id="allSlugsTheme">
+        <div class="platformHead">
+            <p class="platform">All slugs</p>
         </div>
-        <div class="smartSlugs">
-            <div class="platformHead">
-                <p class="platform">Smart TV slugs</p>
-            </div>
-            <div class="slugMain">
-                <div class="slugContainer">
-                    <div class="checkboxes">
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputMain" type="checkbox" id="/main" value="/main" name="smart"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newMain" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputShowAsterisk" type="checkbox" id="/show/*" value="/show/*" name="smart"
-                                        checked>
-                                    <div class="checkbox-new checkbox-newShowAsterisk" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputSearch" type="checkbox" id="/search" value="/search" name="smart"
-                                        >
-                                    <div class="checkbox-new checkbox-newSearch" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputCollections" type="checkbox" id="/collections" value="/collections" name="smart"
-                                        >
-                                    <div class="checkbox-new checkbox-newCollections" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputMoviesAsterisk" type="checkbox" id="/movies/*" value="/movies/*" name="smart"
-                                        >
-                                    <div class="checkbox-new checkbox-newMoviesAsterisk" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputAll" type="checkbox" id="/all" value="/all" name="smart"
-                                        >
-                                    <div class="checkbox-new checkbox-newAll" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputFree" type="checkbox" id="/free" value="/free" name="smart"
-                                        >
-                                    <div class="checkbox-new checkbox-newFree" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
+        <div class="slugMain">
+            <div class="slugContainer">
+                <div class="checkboxes">
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputSlash" type="checkbox" id="/" value="/" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newSlash" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
                     </div>
-                    <input class="customSlug" type="text" id="customSmartSlug" placeholder="Введите слаг">
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputShows" type="checkbox" id="/shows" value="/shows" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newShows" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputShowAsterisk" type="checkbox" id="/show/*" value="/show/*" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newShowAsterisk" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputCollections" type="checkbox" id="/collections" value="/collections" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newCollections" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputCollections-all" type="checkbox" id="/collections-all" value="/collections-all" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newCollections-all" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputSearch" type="checkbox" id="/search" value="/search" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newSearch" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputSeries" type="checkbox" id="/series" value="/series" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newSeries" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputMovies" type="checkbox" id="/movies" value="/movies" name="all"
+                                    checked>
+                                <div class="checkbox-new checkbox-newMovies" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputSport" type="checkbox" id="/sport" value="/sport" name="all"
+                                    >
+                                <div class="checkbox-new checkbox-newSport" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputTV" type="checkbox" id="/tv" value="/tv" name="all"
+                                    >
+                                <div class="checkbox-new checkbox-newTV" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputSlashAsterisk" type="checkbox" id="/*" value="/*" name="allDisable"
+                                disabled>
+                                <div class="checkbox-new checkbox-newSlashAsterisk" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
                 </div>
-                <div class="slugPanel">
-                    <button class="copy copySlug" id="copySmartSlug"></button>
-                    <div class="toggleBtn">
-                        <button class="on" id="onSmartSlug"></button>
-                        <button class="off" id="offSmartSlug"></button>
-                    </div>
-                    <div class="inputBtn">
-                        <button class="delete" id="deleteCustomSmartSlug"></button>
-                        <button class="copy copyOne" id="copyCustomSmartSlug"></button>
-                    </div>
-                </div>       
+                <input class="customSlug" type="text" id="customSlug" placeholder="Введите слаг">
             </div>
-            <!-- <div class="bottom"></div> -->
-        </div>
+            <div class="slugPanel">
+                <button class="copy copySlug" id="copyAllSlug">
+                    <span class="tooltipText" name="tooltipText">Копировать все слаги</span>
+                </button>
+                <div class="toggleBtn">
+                    <button class="on" id="onAllSlug">
+                        <span class="tooltipText" name="tooltipText">Включить все</span>
+                    </button>
+                    <button class="off" id="offAllSlug">
+                        <span class="tooltipText">Выключить все</span>
+                    </button>
+                </div>
+                <div class="inputBtn">
+                    <button class="delete" id="deleteCustomSLug">
+                        <span class="tooltipText">Очистить поле</span>
+                    </button>
+                    <button class="copy copyOne" id="copyCustomSlug">
+                        <span class="tooltipText">Копировать слаг</span>
+                    </button>
+                </div>
+            </div>       
+        </div>        
     </div>
-    <div class="hash">
-        <div class="tariff">
-            <div class="platformHead">
-                <p class="platform">Tariff</p>
-            </div>
-            <div class="outputBlocks">
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/Web.svg">
-                    <div class="outputLink" name="tariff" id="web">
-                    </div>
-                    <button class="copy copyLink" name="1" id="copyWebTariff"></button>
-                </div>
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/Android.svg">
-                    <div class="outputLink" name="tariff" id="android"></div>
-                    <button class="copy copyLink" name="2" id="copyAndroidTariff"></button>
-                </div>
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/SmartTV.svg">
-                    <div class="outputLink" name="tariff" id="smartTV"></div>
-                    <button class="copy copyLink" name="3" id="copySmartTariff"></button>
-                </div>
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/WebSmart.svg">
-                    <div class="outputLink" name="tariff" id="webSmart"></div>
-                    <button class="copy copyLink" name="4" id="copyWebSmartTariff"></button>
-                </div>
-                <div class="linkPanel">
-                    <div class="linkInput">
-                        <input class="inputTariff" type="text" placeholder="Введите тариф" id="inputTariff">
-                        <input class="inputTariff" type="text" placeholder="Введите слаг редиректа" id="inputTariffRedirect">
-                    </div>
-                    <div class="linkBtn">
-                        <div class="deletePanel">
-                            <button class="delete" id="deleteTariff"></button>
-                            <button class="delete" id="deleteTariffRedirect"></button>
-                        </div>
-                        <button class="enter" id="enterTariff"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom"></div>    
+    <div class="smartSlugs" id="smartSlugsTheme">
+        <div class="platformHead">
+            <p class="platform">Smart TV slugs</p>
         </div>
-        <div class="promocode">
-            <div class="platformHead">
-                <p class="platform">Promocode</p>
-            </div>
-            <div class="outputBlocks">
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/Web.svg">
-                    <div class="outputLink" name="promo" id="webPromo"></div>
-                    <button class="copy copyLink" name="1" id="copyWebPromo"></button>
-                </div>
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/Android.svg">
-                    <div class="outputLink" name="promo" id="androidPromo"></div>
-                    <button class="copy copyLink" name="1" id="copyAndroidPromo"></button>
-                </div>
-                <div class="hashForms">
-                    <img class="platformLabel" src="images/icons/SmartWebTV.svg">
-                    <div class="outputLink" name="promo" id="smartTVPromo"></div>
-                    <button class="copy copyLink" name="3" id="copySmartPromo"></button>
-                </div>
-                <div class="linkPanel">
-                    <div class="linkInput">
-                        <input class="inputPromocode" type="text" placeholder="Введите промокод" id="inputPromocode">
-                        <input class="inputPromocode" type="text" placeholder="Введите слаг редиректа" id="inputPromoRedirect">
+        <div class="slugMain">
+            <div class="slugContainer">
+                <div class="checkboxes">
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputMain" type="checkbox" id="/main" value="/main" name="smart"
+                                    checked>
+                                <div class="checkbox-new checkbox-newMain" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
                     </div>
-                    <div class="linkSmartBtn">
-                        <div class="deletePanel">
-                            <button class="delete" id="deletePromo"></button>
-                            <button class="delete" id="deletePromoRedirect"></button>
-                        </div>
-                        <div class="check-item">
-                            <form>
-                                <label class="checkbox">
-                                    <input class="checkbox-input checkbox-inputActive" type="checkbox" id="active" name="active"
-                                        >
-                                    <div class="checkbox-new checkbox-newActive" aria-hidden="true">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                        <button class="enter" id="enterPromo"></button>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputShowAsterisk" type="checkbox" id="/show/*" value="/show/*" name="smart"
+                                    checked>
+                                <div class="checkbox-new checkbox-newShowAsterisk" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputSearch" type="checkbox" id="/search" value="/search" name="smart"
+                                    >
+                                <div class="checkbox-new checkbox-newSearch" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputCollections" type="checkbox" id="/collections" value="/collections" name="smart"
+                                    >
+                                <div class="checkbox-new checkbox-newCollections" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputMoviesAsterisk" type="checkbox" id="/movies/*" value="/movies/*" name="smart"
+                                    >
+                                <div class="checkbox-new checkbox-newMoviesAsterisk" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputAll" type="checkbox" id="/all" value="/all" name="smart"
+                                    >
+                                <div class="checkbox-new checkbox-newAll" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputFree" type="checkbox" id="/free" value="/free" name="smart"
+                                    >
+                                <div class="checkbox-new checkbox-newFree" aria-hidden="true">
+                                </div>
+                            </label>
+                        </form>
                     </div>
                 </div>
+                <input class="customSlug" type="text" id="customSmartSlug" placeholder="Введите слаг">
             </div>
-            <div class="bottom"></div>  
+            <div class="slugPanel">
+                <button class="copy copySlug" id="copySmartSlug">
+                    <span class="tooltipText" name="tooltipText">Копировать все слаги</span>
+                </button>
+                <div class="toggleBtn">
+                    <button class="on" id="onSmartSlug">
+                        <span class="tooltipText">Включить все</span>
+                    </button>
+                    <button class="off" id="offSmartSlug">
+                        <span class="tooltipText">Выключить все</span>
+                    </button>
+                </div>
+                <div class="inputBtn">
+                    <button class="delete" id="deleteCustomSmartSlug">
+                        <span class="tooltipText">Очистить поле</span>
+                    </button>
+                    <button class="copy copyOne" id="copyCustomSmartSlug">
+                        <span class="tooltipText">Копировать слаг</span>
+                    </button>
+                </div>
+            </div>       
         </div>
     </div>
-    <div class="bottom"></div>
+</div>
+<div class="hash">
+    <div class="tariff" id="tariffTheme">
+        <div class="platformHead">
+            <p class="platform">Tariff</p>
+        </div>
+        <div class="outputBlocks">
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/Web.svg">
+                <div class="outputLink" name="tariff" id="web">
+                </div>
+                <button class="copy copyLink" name="1" id="copyWebTariff">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/Android.svg">
+                <div class="outputLink" name="tariff" id="android"></div>
+                <button class="copy copyLink" name="2" id="copyAndroidTariff">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/SmartTV.svg">
+                <div class="outputLink" name="tariff" id="smartTV"></div>
+                <button class="copy copyLink" name="3" id="copySmartTariff">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/WebSmart.svg">
+                <div class="outputLink" name="tariff" id="webSmart"></div>
+                <button class="copy copyLink" name="4" id="copyWebSmartTariff">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="linkPanel">
+                <div class="linkInput">
+                    <input class="inputTariff" type="text" placeholder="Введите тариф" id="inputTariff">
+                    <input class="inputTariff" type="text" placeholder="Введите слаг редиректа" id="inputTariffRedirect">
+                </div>
+                <div class="linkBtn">
+                    <div class="deletePanel">
+                        <button class="delete" id="deleteTariff">
+                            <span class="tooltipText">Очистить тариф</span>
+                        </button>
+                        <button class="delete" id="deleteTariffRedirect">
+                            <span class="tooltipText">Очистить редирект</span>
+                        </button>
+                    </div>
+                    <button class="enter" id="enterTariff">
+                        <span class="tooltipText">Сформировать ссылки</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom"></div>    
+    </div>
+    <div class="promocode" id="promocodeTheme">
+        <div class="platformHead">
+            <p class="platform">Promocode</p>
+        </div>
+        <div class="outputBlocks">
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/Web.svg">
+                <div class="outputLink" name="promo" id="webPromo"></div>
+                <button class="copy copyLink" name="1" id="copyWebPromo">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/Android.svg">
+                <div class="outputLink" name="promo" id="androidPromo"></div>
+                <button class="copy copyLink" name="1" id="copyAndroidPromo">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="hashForms">
+                <img class="platformLabel" src="images/icons/SmartWebTV.svg">
+                <div class="outputLink" name="promo" id="smartTVPromo"></div>
+                <button class="copy copyLink" name="3" id="copySmartPromo">
+                    <span class="tooltipText">Копировать ссылку</span>
+                </button>
+            </div>
+            <div class="linkPanel">
+                <div class="linkInput">
+                    <input class="inputPromocode" type="text" placeholder="Введите промокод" id="inputPromocode">
+                    <input class="inputPromocode" type="text" placeholder="Введите слаг редиректа" id="inputPromoRedirect">
+                </div>
+                <div class="linkSmartBtn">
+                    <div class="deletePanel">
+                        <button class="delete" id="deletePromo">
+                            <span class="tooltipText">Очистить промокод</span>
+                        </button>
+                        <button class="delete" id="deletePromoRedirect">
+                            <span class="tooltipText">Очистить редирект</span>
+                        </button>
+                    </div>
+                    <div class="check-item">
+                        <form>
+                            <label class="checkbox">
+                                <input class="checkbox-input checkbox-inputActive" type="checkbox" id="active" name="active"
+                                    >
+                                <div class="checkbox-new checkbox-newActive" aria-hidden="true">
+                                </div>
+                                <span class="tooltipText">Автоприменение промокода</span>
+                            </label>
+                        </form>
+                    </div>
+                    <button class="enter" id="enterPromo">
+                        <span class="tooltipText">Сформировать ссылки</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom"></div>  
+    </div>
+</div>
+<div class="bottom"></div>
 </body>
 
 </html>
